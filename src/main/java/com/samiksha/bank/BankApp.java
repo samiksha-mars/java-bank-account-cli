@@ -103,8 +103,8 @@ public class BankApp {
         if (from == null || to == null || amount == null) {
             return;
         }
-        bank.transfer(from, to, amount);
-        out.println("Transferred " + amount + " from " + from.toUpperCase() + " to " + to.toUpperCase());
+        BigDecimal moved = bank.transfer(from, to, amount);
+        out.println("Transferred " + moved + " from " + from.toUpperCase() + " to " + to.toUpperCase());
     }
 
     private void showHistory() {

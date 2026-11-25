@@ -53,7 +53,7 @@ class BankTest {
 
     @Test
     void transferMovesMoneyAndRecordsBothSides() {
-        bank.transfer(alice.getAccountNumber(), bob.getAccountNumber(), amt("40"));
+        assertEquals(amt("40.00"), bank.transfer(alice.getAccountNumber(), bob.getAccountNumber(), amt("40")));
 
         assertEquals(amt("60.00"), alice.getBalance());
         assertEquals(amt("40.00"), bob.getBalance());

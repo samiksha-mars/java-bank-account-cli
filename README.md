@@ -65,7 +65,7 @@ Choose an option: 4
 From account: ACC-1001
 To account: ACC-1002
 Amount to transfer: 30
-Transferred 30 from ACC-1001 to ACC-1002
+Transferred 30.00 from ACC-1001 to ACC-1002
 
 Choose an option: 5
 Account number: ACC-1001

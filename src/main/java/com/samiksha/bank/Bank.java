@@ -47,8 +47,10 @@ public class Bank {
     /**
      * Moves money between two accounts. Validation happens before either balance changes,
      * so a failed transfer leaves both accounts untouched.
+     *
+     * @return the amount actually moved, rounded to 2 decimal places
      */
-    public void transfer(String fromNumber, String toNumber, BigDecimal amount) {
+    public BigDecimal transfer(String fromNumber, String toNumber, BigDecimal amount) {
         Account from = getAccount(fromNumber);
         Account to = getAccount(toNumber);
         if (from == to) {
@@ -58,6 +60,7 @@ public class Bank {
         from.ensureFunds(value);
         from.debit(value, TransactionType.TRANSFER_OUT, "Transfer to " + to.getAccountNumber());
         to.credit(value, TransactionType.TRANSFER_IN, "Transfer from " + from.getAccountNumber());
+        return value;
     }
 
     public BigDecimal totalDeposits() {
